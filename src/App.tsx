@@ -7,7 +7,7 @@ const goods=[['Custom Flexible Partial Denture','DNT-FLX-001','$8,420','71','42.
 const orderData=[['US-20261105-0082','Emily R.','Custom Flexible Partial Denture','$119.00','待发货'],['US-20261105-0081','Jessica M.','Clear Retainer Set','$89.00','运输中'],['US-20261105-0080','Ashley B.','Custom Flexible Partial Denture','$119.00','已完成'],['US-20261104-0079','Sarah L.','Denture Cleaning Tablets','$18.99','已完成']];
 const descriptions=['追踪美国市场趋势、类目机会与竞品动态。','评估候选商品的需求、竞争、利润与供应链。','管理商品测试计划、预算与测品决策。','统一管理商品、SKU、成本、售价与 Listing。','沉淀视频素材、脚本与发布表现。','查看订单状态、商品明细与履约进度。','分层管理 FBT 可售、不可售、在途与入仓计划。','拆解收入、商品成本、物流费用与广告支出。'];
 export default function App(){
- const [active,setActive]=useState('经营驾驶舱'),[collapsed,setCollapsed]=useState(false),[query,setQuery]=useState(''),[toast,setToast]=useState(''),[modal,setModal]=useState(false),[notice,setNotice]=useState(false),[filter,setFilter]=useState('全部状态');
+ const [active,setActive]=useState('经营驾驶舱'),[collapsed,setCollapsed]=useState(false),[query,setQuery]=useState(''),[toast,setToast]=useState(''),[modal,setModal]=useState<string|false>(false),[notice,setNotice]=useState(false),[filter,setFilter]=useState('全部状态');
  const notify=(s:string)=>{setToast(s);window.setTimeout(()=>setToast(''),2300)};
  const products=goods.filter(x=>x.join(' ').toLowerCase().includes(query.toLowerCase()));
  const orders=orderData.filter(x=>x.join(' ').toLowerCase().includes(query.toLowerCase())&&(filter==='全部状态'||x[4]===filter));
