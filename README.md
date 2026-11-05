@@ -16,3 +16,12 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Deploy to Vercel
+
+1. Sign in to Vercel and choose **Add New → Project**.
+2. Import the GitHub repository `2933268670a-spec/-`.
+3. Keep the Vite settings: Build Command `npm run build`, Output Directory `dist`.
+4. Select **Deploy**. Future pushes to `main` will trigger new deployments automatically.
+
+This is currently a front-end demo. It does not connect to TikTok Shop APIs or persist real store data. Do not enter customer or payment information.
